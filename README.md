@@ -1,2 +1,2 @@
 # aws-edc
-# EDC
+# EDC-2
