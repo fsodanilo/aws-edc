@@ -1,2 +1,2 @@
 # aws-edc
-# Delta role
+# Delta role/policy
