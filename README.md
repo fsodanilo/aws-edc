@@ -1,1 +1,2 @@
 # aws-edc
+# kinesis
