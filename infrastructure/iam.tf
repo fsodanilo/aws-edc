@@ -17,10 +17,10 @@ resource "aws_iam_role" "lambda" {
 }
 EOF
 
-  tags = {
-    IES   = "BRONXHOME",
-    CURSO = "EDC"
-  }
+#  tags = {
+#    IES   = "BRONXHOME",
+#    CURSO = "EDC"
+#  }
 
 }
 
