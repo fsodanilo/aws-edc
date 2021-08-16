@@ -117,8 +117,8 @@ resource "aws_iam_policy" "firehose" {
              ]
          }
      ]
- }
- EOF
+}
+EOF
 }
 
 
