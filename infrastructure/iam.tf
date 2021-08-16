@@ -86,7 +86,7 @@ resource "aws_iam_policy" "firehose" {
   description = "Provides write permissions to CloudWatch Logs and S3"
 
   policy = <<EOF
- {
+{
      "Version": "2012-10-17",
      "Statement": [
          {
