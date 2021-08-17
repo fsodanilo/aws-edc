@@ -87,36 +87,36 @@ resource "aws_iam_policy" "firehose" {
 
   policy = <<EOF
 {
-     "Version": "2012-10-17",
-     "Statement": [
-         {
-             "Effect": "Allow",
-             "Action": [
-                 "logs:CreateLogGroup",
-                 "logs:CreateLogStream",
-                 "logs:PutLogEvents",
-                 "glue:*"
-             ],
-             "Resource": "*"
-         },
-         {
-             "Effect": "Allow",
-             "Action": [
-                 "s3:AbortMultipartUpload",
-                 "s3:GetBucketLocation",
-                 "s3:GetObject",
-                 "s3:GetObjectVersion",
-                 "s3:DeleteObject",
-                 "s3:ListBucket",
-                 "s3:ListBucketMultipartUploads",
-                 "s3:PutObject"
-             ],
-             "Resource": [
-               "${aws_s3_bucket.stream.arn}",
-               "${aws_s3_bucket.stream.arn}/*"
-             ]
-         }
-     ]
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "logs:CreateLogGroup",
+                "logs:CreateLogStream",
+                "logs:PutLogEvents",
+                "glue:*"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "s3:AbortMultipartUpload",
+                "s3:GetBucketLocation",
+                "s3:GetObject",
+                "s3:GetObjectVersion",
+                "s3:DeleteObject",
+                "s3:ListBucket",
+                "s3:ListBucketMultipartUploads",
+                "s3:PutObject"
+            ],
+            "Resource": [
+                "${aws_s3_bucket.stream.arn}",
+                "${aws_s3_bucket.stream.arn}/*"
+            ]
+        }
+    ]
 }
 EOF
 }
