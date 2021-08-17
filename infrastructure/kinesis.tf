@@ -1,5 +1,5 @@
 resource "aws_kinesis_firehose_delivery_stream" "extended_s3_stream" {
-  name        = "igti-kinesis-firehose-s3-stream"
+  name        = "bronx-kinesis-firehose-s3-stream"
   destination = "extended_s3"
 
   extended_s3_configuration {
