@@ -11,8 +11,9 @@ enem = (
     .read
     .format("csv")
     .option("header", True)
+    .option("inferSchema", True)
     .option("delimiter", "|")
-    .load("s3://datalake-brx-edc/raw-data/censono/year-2020/matricula_norte.CSV")
+    .load("s3://datalake-brx-edc/raw-data/censo/")
 )
 
 (
@@ -20,6 +21,7 @@ enem = (
     .write
     .mode("overwrite")
     .format("parquet")
-    .save("s3://datalake-brx-edc/staging/censono")
+    .partitionBy("year")
+    .save("s3://datalake-brx-edc/staging/censo")
 )
 #teste
