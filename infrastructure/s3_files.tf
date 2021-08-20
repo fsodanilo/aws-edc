@@ -22,7 +22,7 @@ resource "aws_s3_bucket_object" "delta_upsert" {
   etag   = filemd5("../etl/02_delta_spark_upsert.py")
 }
 
-resource "aws_s3_bucket_object" "job_spark" {
+resource "aws_s3_bucket_object" "job_spark_censo2020" {
   bucket = aws_s3_bucket.dl.id
   key    = "emr-code/pyspark/job_spark_from_tf.py"
   acl    = "private"
