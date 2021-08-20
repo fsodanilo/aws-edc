@@ -1,4 +1,3 @@
-from pyspark.sql.functions import mean, max, min, col, count
 from pyspark.sql import SparkSession
 
 spark = (
@@ -6,20 +5,21 @@ spark = (
     .getOrCreate()
 )
 
-enem = (
+censo = (
     spark
     .read
     .format("csv")
     .option("header", True)
+    .option("inferSchema", True)
     .option("delimiter", "|")
-    .load("s3://datalake-brx-edc/raw-data/censono/year-2020/matricula_norte.CSV")
+    .load("s3://datalake-brx-edc/raw-data/censo2020/")
 )
 
 (
-    enem
+    censo
     .write
     .mode("overwrite")
     .format("parquet")
-    .save("s3://datalake-brx-edc/staging/censono")
+    .partitionBy("CO_UF")
+    .save("s3://datalake-brx-edc/staging/censo2020")
 )
-#teste

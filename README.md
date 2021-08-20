@@ -7,7 +7,7 @@
 
 #### Ministrado pelo Prof. Dr. Neylson Crepalde
 
-Repositório com a solução do desafio proposto no módulo 1 do bootcamp **Engenheiro de Dados Cloud** do IGTI.
+Repositório com as atividades do módulo 1 do bootcamp **Engenheiro de Dados Cloud** do IGTI.
 Códigos e esteiras de deploy.
 
 # Use Cases trabalhados
