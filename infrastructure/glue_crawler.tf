@@ -24,3 +24,31 @@ EOF
     CURSO = "EDC"
   }
 }
+
+
+resource "aws_glue_catalog_database" "censo2020" {
+  name = "censodb"
+}
+
+resource "aws_glue_crawler" "censo2020" {
+  database_name = aws_glue_catalog_database.censo2020.name
+  name          = "censo2020_s3_crawler"
+  role          = aws_iam_role.glue_role.arn
+
+  s3_target {
+    path = "s3://datalake-brx-edc/staging/censo2020/"
+  }
+
+  configuration = <<EOF
+{
+   "Version": 1.0,
+   "Grouping": {
+      "TableGroupingPolicy": "CombineCompatibleSchemas" }
+}
+EOF
+
+  tags = {
+    IES   = "BRONXHOME",
+    CURSO = "EDC"
+  }
+}
