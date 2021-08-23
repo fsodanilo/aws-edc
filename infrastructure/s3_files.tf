@@ -24,7 +24,7 @@ resource "aws_s3_bucket_object" "delta_upsert" {
 
 resource "aws_s3_bucket_object" "job_spark_censo2020" {
   bucket = aws_s3_bucket.dl.id
-  key    = "emr-code/pyspark/job_spark_from_tf.py"
+  key    = "emr-code/pyspark/job_spark_censo2020.py"
   acl    = "private"
   source = "../job_spark_censo2020.py"
   etag   = filemd5("../job_spark_censo2020.py")
